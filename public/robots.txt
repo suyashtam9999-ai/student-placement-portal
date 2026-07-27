@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://student-placement-portal-7opn.onrender.com/sitemap.xml
