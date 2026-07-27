@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mock Tests — PlacementPrep</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="dashboard.html" class="brand"><span class="dot"></span> PlacementPrep</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="resources.html">Resources</a>
+      <a href="mock-test.html" class="active">Mock Tests</a>
+      <a href="profile.html">Profile</a>
+      <span id="nav-user-name" class="mono" style="color:#cfd7ea; font-size:0.85rem;"></span>
+      <button id="logout-btn">Log out</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <!-- SETUP SCREEN -->
+    <div id="setup-screen">
+      <h2>Mock Tests</h2>
+      <p class="helper-text mb-24">Pick a category and start a timed test — like collecting your exam hall ticket.</p>
+
+      <div class="grid grid-2" id="test-cards">
+        <!-- ticket cards injected by JS -->
+      </div>
+    </div>
+
+    <!-- TEST SCREEN -->
+    <div id="test-screen" class="hidden">
+      <div class="flex-between mb-24">
+        <h2 id="test-heading" style="margin:0;">Test</h2>
+        <span class="timer-pill" id="timer">10:00</span>
+      </div>
+      <div class="card" id="question-container"></div>
+      <div class="flex-between mt-24">
+        <span class="helper-text" id="progress-label"></span>
+        <button class="btn btn-accent" id="submit-test-btn">Submit Test</button>
+      </div>
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="result-screen" class="hidden">
+      <h2>Test Result</h2>
+      <div class="card grid grid-3 mb-24">
+        <div class="stat-block">
+          <div class="stat-num" id="result-score">0%</div>
+          <div class="stat-lbl">Score</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num" id="result-correct">0/0</div>
+          <div class="stat-lbl">Correct answers</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num" id="result-time">0s</div>
+          <div class="stat-lbl">Time taken</div>
+        </div>
+      </div>
+      <h3>Answer Review</h3>
+      <div class="card" id="review-container"></div>
+      <div class="mt-24">
+        <button class="btn btn-primary" id="retake-btn">Take another test</button>
+        <a href="dashboard.html" class="btn btn-outline">Back to dashboard</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">Student Placement Preparation Portal &copy; 2026 — College Mini Project</div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/mocktest.js"></script>
+</body>
+</html>

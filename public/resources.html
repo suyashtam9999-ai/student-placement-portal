@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resources — PlacementPrep</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="dashboard.html" class="brand"><span class="dot"></span> PlacementPrep</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="mock-test.html">Mock Tests</a>
+      <a href="profile.html">Profile</a>
+      <span id="nav-user-name" class="mono" style="color:#cfd7ea; font-size:0.85rem;"></span>
+      <button id="logout-btn">Log out</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <h2>Study Resources</h2>
+    <p class="helper-text mb-24">Mark each item complete as you finish it — your dashboard readiness score updates automatically.</p>
+
+    <div class="filter-row" id="filter-row">
+      <button class="filter-chip active" data-cat="">All</button>
+      <button class="filter-chip" data-cat="Aptitude">Aptitude</button>
+      <button class="filter-chip" data-cat="Coding">Coding</button>
+      <button class="filter-chip" data-cat="Core CS">Core CS</button>
+      <button class="filter-chip" data-cat="HR">HR</button>
+      <button class="filter-chip" data-cat="Communication">Communication</button>
+    </div>
+
+    <div class="card">
+      <div id="resource-list"><p class="helper-text">Loading...</p></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">Student Placement Preparation Portal &copy; 2026 — College Mini Project</div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/resources.js"></script>
+</body>
+</html>

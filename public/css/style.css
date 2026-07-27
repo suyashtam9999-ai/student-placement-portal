@@ -1,0 +1,314 @@
+/* ===================== DESIGN TOKENS ===================== */
+:root {
+  --bg: #f6f5fb;
+  --surface: #ffffff;
+  --ink: #211b3d;
+  --ink-soft: #635f80;
+  --navy: #2f2361;
+  --navy-soft: #4736a3;
+  --emerald: #17a893;
+  --emerald-soft: #e2f7f3;
+  --amber: #ff7a59;
+  --amber-soft: #ffe9e2;
+  --danger: #e0507a;
+  --danger-soft: #fce8ee;
+  --line: #e4e0f2;
+
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(18, 32, 63, 0.08);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap");
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+a { color: var(--navy); text-decoration: none; }
+.mono { font-family: var(--font-mono); }
+
+/* ===================== LAYOUT ===================== */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.navbar {
+  background: var(--navy);
+  color: #fff;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--emerald); display: inline-block; }
+
+.nav-links { display: flex; gap: 22px; align-items: center; }
+.nav-links a { color: #cfd7ea; font-weight: 500; font-size: 0.94rem; }
+.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-links button {
+  background: var(--emerald);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+main { padding: 40px 0 80px; }
+
+/* ===================== CARD / SURFACE ===================== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.grid { display: grid; gap: 20px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 800px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ===================== BUTTONS ===================== */
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--navy-soft); }
+.btn-accent { background: var(--emerald); color: #fff; }
+.btn-accent:hover { opacity: 0.9; }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--line); }
+.btn-outline:hover { border-color: var(--navy); }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-block { width: 100%; }
+
+/* ===================== FORMS ===================== */
+label { font-size: 0.85rem; font-weight: 600; color: var(--ink-soft); display: block; margin-bottom: 6px; }
+input, select, textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  background: #fff;
+  color: var(--ink);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--navy);
+}
+
+.auth-wrap {
+  max-width: 420px;
+  margin: 60px auto;
+}
+
+.error-text { color: var(--danger); font-size: 0.85rem; margin-top: -10px; margin-bottom: 14px; }
+.helper-text { color: var(--ink-soft); font-size: 0.85rem; }
+
+/* ===================== BADGES / TAGS ===================== */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.badge-aptitude { background: var(--amber-soft); color: #8a6011; }
+.badge-coding { background: #e6ecfb; color: #2a3f8f; }
+.badge-corecs { background: var(--emerald-soft); color: #1a7a55; }
+.badge-hr { background: var(--danger-soft); color: #a5333c; }
+.badge-communication { background: #f1e9fb; color: #6a3fa0; }
+
+/* ===================== HERO ===================== */
+.hero {
+  padding: 70px 0 50px;
+  text-align: left;
+}
+.hero .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.hero h1 { font-size: 2.6rem; max-width: 640px; line-height: 1.1; }
+.hero p { max-width: 560px; color: var(--ink-soft); font-size: 1.05rem; margin-top: 14px; }
+.hero .cta-row { margin-top: 28px; display: flex; gap: 14px; }
+
+/* ===================== READINESS METER (signature element) ===================== */
+.readiness-meter {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.readiness-ring { position: relative; width: 130px; height: 130px; flex-shrink: 0; }
+.readiness-ring svg { transform: rotate(-90deg); }
+.readiness-ring .track { fill: none; stroke: var(--line); stroke-width: 12; }
+.readiness-ring .progress { fill: none; stroke: var(--emerald); stroke-width: 12; stroke-linecap: round; transition: stroke-dashoffset 0.6s ease; }
+.readiness-ring .value {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  font-family: var(--font-mono);
+}
+.readiness-ring .value .num { font-size: 1.7rem; font-weight: 700; color: var(--navy); }
+.readiness-ring .value .lbl { font-size: 0.62rem; color: var(--ink-soft); letter-spacing: 0.05em; }
+
+.stat-block { }
+.stat-block .stat-num { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--navy); }
+.stat-block .stat-lbl { font-size: 0.8rem; color: var(--ink-soft); }
+
+/* ===================== HALL TICKET CARD (mock test signature) ===================== */
+.ticket {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  overflow: hidden;
+}
+.ticket-main { flex: 1; padding: 22px 24px; }
+.ticket-stub {
+  width: 130px;
+  background: var(--navy);
+  color: #fff;
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  border-left: 2px dashed rgba(255,255,255,0.25);
+}
+.ticket-stub .stub-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.06em; color: #9fb0d8; margin-bottom: 4px; }
+.ticket-stub .stub-value { font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; }
+
+.ticket-title { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; margin-bottom: 4px; }
+.ticket-meta { color: var(--ink-soft); font-size: 0.85rem; margin-bottom: 14px; }
+
+/* ===================== PROGRESS BAR ===================== */
+.progress-bar { height: 8px; background: var(--line); border-radius: 6px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: var(--emerald); }
+
+/* ===================== RESOURCE LIST ===================== */
+.resource-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.resource-item:last-child { border-bottom: none; }
+.resource-item .r-title { font-weight: 600; margin-bottom: 4px; }
+.resource-item .r-desc { color: var(--ink-soft); font-size: 0.88rem; }
+.filter-row { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.filter-chip {
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.filter-chip.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+/* ===================== TEST TAKING ===================== */
+.question-box { margin-bottom: 26px; }
+.question-num { font-family: var(--font-mono); color: var(--emerald); font-weight: 700; font-size: 0.85rem; margin-bottom: 8px; }
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.option-row:hover { border-color: var(--navy-soft); }
+.option-row.selected { border-color: var(--emerald); background: var(--emerald-soft); }
+.option-row.correct { border-color: var(--emerald); background: var(--emerald-soft); }
+.option-row.incorrect { border-color: var(--danger); background: var(--danger-soft); }
+
+.timer-pill {
+  font-family: var(--font-mono);
+  background: var(--navy);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* ===================== FOOTER ===================== */
+footer { padding: 30px 0; text-align: center; color: var(--ink-soft); font-size: 0.85rem; border-top: 1px solid var(--line); }
+
+/* ===================== UTIL ===================== */
+.flex { display: flex; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.mt-8 { margin-top: 8px; } .mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; } .mt-32 { margin-top: 32px; }
+.mb-8 { margin-bottom: 8px; } .mb-16 { margin-bottom: 16px; } .mb-24 { margin-bottom: 24px; }
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.empty-state { text-align: center; padding: 50px 20px; color: var(--ink-soft); }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Register — PlacementPrep</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="dot"></span> PlacementPrep</a>
+    <div class="nav-links">
+      <a href="login.html">Already registered? Log in</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="auth-wrap card">
+      <h2>Create your account</h2>
+      <p class="helper-text mb-24">Start tracking your placement readiness today.</p>
+
+      <form id="register-form">
+        <label for="name">Full name</label>
+        <input type="text" id="name" required placeholder="Jane Student" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="you@college.edu" />
+
+        <label for="branch">Branch / Department</label>
+        <input type="text" id="branch" placeholder="e.g. Computer Science" />
+
+        <label for="graduationYear">Graduation Year</label>
+        <input type="number" id="graduationYear" placeholder="e.g. 2027" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="6" placeholder="At least 6 characters" />
+
+        <div id="form-error" class="error-text hidden"></div>
+
+        <button type="submit" class="btn btn-accent btn-block">Create account</button>
+      </form>
+
+      <p class="helper-text text-center mt-16">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </div>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

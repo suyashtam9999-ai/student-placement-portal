@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — PlacementPrep</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="dashboard.html" class="brand"><span class="dot"></span> PlacementPrep</a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="resources.html">Resources</a>
+      <a href="mock-test.html">Mock Tests</a>
+      <a href="profile.html">Profile</a>
+      <span id="nav-user-name" class="mono" style="color:#cfd7ea; font-size:0.85rem;"></span>
+      <button id="logout-btn">Log out</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <h2>Your Readiness Dashboard</h2>
+    <p class="helper-text mb-24">One score combining your resource progress and mock test performance.</p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="readiness-meter">
+          <div class="readiness-ring">
+            <svg width="130" height="130" viewBox="0 0 130 130">
+              <circle class="track" cx="65" cy="65" r="54"></circle>
+              <circle id="progress-ring" class="progress" cx="65" cy="65" r="54" stroke-dasharray="339" stroke-dashoffset="339"></circle>
+            </svg>
+            <div class="value">
+              <span class="num" id="readiness-num">0</span>
+              <span class="lbl">READINESS</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom:4px;">Overall Readiness</h3>
+            <p class="helper-text">Weighted: 40% resource progress + 60% average test score.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="grid grid-2">
+          <div class="stat-block">
+            <div class="stat-num" id="stat-resources">0%</div>
+            <div class="stat-lbl">Resources completed</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num" id="stat-tests">0</div>
+            <div class="stat-lbl">Mock tests taken</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num" id="stat-avg">0%</div>
+            <div class="stat-lbl">Average test score</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num" id="stat-completed">0</div>
+            <div class="stat-lbl">Resources done</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-24">
+      <div class="flex-between mb-16">
+        <h3 style="margin:0;">Recent Mock Test Results</h3>
+        <a href="mock-test.html" class="btn btn-outline">Take a new test</a>
+      </div>
+      <div id="recent-results"><p class="helper-text">Loading...</p></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">Student Placement Preparation Portal &copy; 2026 — College Mini Project</div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Profile — PlacementPrep</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="dashboard.html" class="brand"><span class="dot"></span> PlacementPrep</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="resources.html">Resources</a>
+      <a href="mock-test.html">Mock Tests</a>
+      <a href="profile.html" class="active">Profile</a>
+      <span id="nav-user-name" class="mono" style="color:#cfd7ea; font-size:0.85rem;"></span>
+      <button id="logout-btn">Log out</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <h2>My Profile</h2>
+    <p class="helper-text mb-24">Keep this updated — recruiters and your resume both start here.</p>
+
+    <div class="card">
+      <form id="profile-form">
+        <div class="grid grid-2">
+          <div>
+            <label for="name">Full name</label>
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="email">Email (read-only)</label>
+            <input type="email" id="email" disabled />
+          </div>
+          <div>
+            <label for="branch">Branch / Department</label>
+            <input type="text" id="branch" />
+          </div>
+          <div>
+            <label for="graduationYear">Graduation Year</label>
+            <input type="number" id="graduationYear" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" />
+          </div>
+          <div>
+            <label for="resumeLink">Resume Link (Drive / Dropbox URL)</label>
+            <input type="text" id="resumeLink" placeholder="https://..." />
+          </div>
+          <div>
+            <label for="githubLink">GitHub URL</label>
+            <input type="text" id="githubLink" placeholder="https://github.com/..." />
+          </div>
+          <div>
+            <label for="linkedinLink">LinkedIn URL</label>
+            <input type="text" id="linkedinLink" placeholder="https://linkedin.com/in/..." />
+          </div>
+        </div>
+
+        <label for="skills">Skills (comma separated)</label>
+        <input type="text" id="skills" placeholder="Java, DSA, SQL, React" />
+
+        <label for="targetCompanies">Target Companies (comma separated)</label>
+        <input type="text" id="targetCompanies" placeholder="TCS, Infosys, Amazon" />
+
+        <div id="save-message" class="helper-text hidden mb-16"></div>
+        <button type="submit" class="btn btn-accent">Save Profile</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">Student Placement Preparation Portal &copy; 2026 — College Mini Project</div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>
