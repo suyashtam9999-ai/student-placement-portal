@@ -8,6 +8,14 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST || "127.0.0.1",
     port: process.env.DB_PORT || 3306,
     dialect: "mysql",
+
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
+
     logging: false,
   }
 );
@@ -15,10 +23,14 @@ const sequelize = new Sequelize(
 const connectDB = async () => {
   try {
     await sequelize.authenticate();
-    console.log(`MySQL connected: ${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`);
 
-    // Auto create/update tables based on models (fine for a college project)
+    console.log(
+      `MySQL connected: ${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
+    );
+
+    // Auto create/update tables
     await sequelize.sync({ alter: true });
+
     console.log("Database tables synced");
   } catch (error) {
     console.error(`MySQL connection failed: ${error.message}`);
